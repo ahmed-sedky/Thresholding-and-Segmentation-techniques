@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="windowModality">
+   <enum>Qt::ApplicationModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1148</width>
+    <height>591</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1148</width>
+    <height>591</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>16777215</width>
+    <height>16777215</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <pointsize>12</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>GUI</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget{
+padding-left: 2px
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout_4">
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <property name="sizeConstraint">
+         <enum>QLayout::SetMinimumSize</enum>
+        </property>
+        <item alignment="Qt::AlignVCenter">
+         <widget class="QLabel" name="imageLabel_1">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>200</width>
+            <height>25</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>120</width>
+            <height>25</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>AlHor</family>
+            <pointsize>16</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Original Image</string>
+          </property>
+         </widget>
+        </item>
+        <item alignment="Qt::AlignVCenter">
+         <widget class="QPushButton" name="open_image">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>90</width>
+            <height>25</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>100</width>
+            <height>25</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Open Image</string>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+          <property name="default">
+           <bool>true</bool>
+          </property>
+          <property name="flat">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item alignment="Qt::AlignHCenter">
+       <widget class="PhotoViewer" name="original_image">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>400</width>
+          <height>400</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>10</width>
+          <height>10</height>
+         </size>
+        </property>
+        <property name="baseSize">
+         <size>
+          <width>210</width>
+          <height>210</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QWidget" name="template_widget" native="true">
+      <layout class="QVBoxLayout" name="template_box">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item alignment="Qt::AlignVCenter">
+          <widget class="QLabel" name="imageLabel_3">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>200</width>
+             <height>25</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>120</width>
+             <height>25</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>AlHor</family>
+             <pointsize>16</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Template Image</string>
+           </property>
+          </widget>
+         </item>
+         <item alignment="Qt::AlignVCenter">
+          <widget class="QPushButton" name="open_template_image">
+           <property name="minimumSize">
+            <size>
+             <width>90</width>
+             <height>25</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>100</width>
+             <height>25</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Open Image</string>
+           </property>
+           <property name="default">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item alignment="Qt::AlignHCenter">
+        <widget class="PhotoViewer" name="template_image">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>400</width>
+           <height>400</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>16777215</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <item alignment="Qt::AlignVCenter">
+         <widget class="QLabel" name="imageLabel_2">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>200</width>
+            <height>25</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>120</width>
+            <height>25</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>AlHor</family>
+            <pointsize>16</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Output Image</string>
+          </property>
+         </widget>
+        </item>
+        <item alignment="Qt::AlignVCenter">
+         <widget class="QComboBox" name="features_combobox">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>160</width>
+            <height>25</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>240</width>
+            <height>25</height>
+           </size>
+          </property>
+          <property name="editable">
+           <bool>false</bool>
+          </property>
+          <property name="placeholderText">
+           <string>jnkkj</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>RGB to LUV</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>K-Means</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Mean Shift</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Region Growing</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Agglomerative Clustering</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Global Otsu</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Local Otsu</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Global Optimal</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Local Optimal</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Global Spectral</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Local Spectral</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+       <widget class="PhotoViewer" name="output_image">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>400</width>
+          <height>400</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>10</width>
+          <height>10</height>
+         </size>
+        </property>
+        <property name="baseSize">
+         <size>
+          <width>210</width>
+          <height>210</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="maximumSize">
+    <size>
+     <width>16777215</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionReset"/>
+  </widget>
+  <action name="actionReset">
+   <property name="text">
+    <string>reset</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PhotoViewer</class>
+   <extends>QGraphicsView</extends>
+   <header>widgets/photoviewer.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

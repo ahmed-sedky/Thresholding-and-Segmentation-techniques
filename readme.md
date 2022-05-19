@@ -246,33 +246,50 @@
   - First we should extract the feature space from the image
 
   ```python
-   features = np.zeros((image.shape[0] ,image.shape[1]))
-
-   for i in range(0,image.shape[0]):
-   for j in range(0,image.shape[1]):
-   features[i][j] = ((int(image[i,j,0]) + int(image[i,j,1]) + int(image[i,j,2]))/3)
+  features = np.zeros((image.shape[0] * image.shape[1], 5))
+    pixel_counter = 0
+    for i in range(image.shape[0]):
+        for j in range(image.shape[1]):
+            pixel = image[i][j]
+            for k in range(5):
+                if (k >= 0) & (k <= 2):
+                    features[pixel_counter][k] = pixel[k]
+                else:
+                    if k == 3:
+                        features[pixel_counter][k] = i
+                    else:
+                        features[pixel_counter][k] = j
+            pixel_counter += 1
 
   ```
 
   - Then compare the euclidean distance between the current mean and the feature space to get the values that are below the threshold.
 
   ```python
-  or f_indx, feature in enumerate(self.features):
-            ecl_dist = self.euclidean_distance(self.current_mean, feature)
+  new_features_indices = []
 
-            if ecl_dist < threshold:
-                below_threshold.append(f_indx)
+    if random_mean:
+        current_mean = np.random.randint(0, len(features))
+        current_mean = features[current_mean]
 
+    for feature_index, feature in enumerate(features):
+        ecl_dist = calculate_distance(current_mean, feature)
+
+        if ecl_dist < threshold:
+            new_features_indices.append(feature_index)
+
+    return new_features_indices, current_mean
   ```
 
   - Get the mean values of all the below_threshold features and calculate the mean of their RGB values and index positions.
 
   ```python
-  mean_r = np.mean(self.feature_space[below_threshold_arr][:, 0])
-      mean_g = np.mean(self.feature_space[below_threshold_arr][:, 1])
-      mean_b = np.mean(self.feature_space[below_threshold_arr][:, 2])
-      mean_i = np.mean(self.feature_space[below_threshold_arr][:, 3])
-      mean_j = np.mean(self.feature_space[below_threshold_arr][:, 4])
+    red_mean = np.mean(features[new_features_indices][:, 0])
+    green_mean = np.mean(features[new_features_indices][:, 1])
+    blue_mean = np.mean(features[new_features_indices][:, 2])
+    rows_mean = np.mean(features[new_features_indices][:, 3])
+    columns_mean = np.mean(features[new_features_indices][:, 4])
+
 
   ```
 
@@ -280,8 +297,8 @@
 
   ```python
   if mean_e_distance < iteration:
-            new_arr = np.zeros((1, 3))
-            new_arr[0][0] = mean_r
-            new_arr[0][1] = mean_g
-            new_arr[0][2] = mean_b
+        rgb_pixel = np.zeros((1, 3))
+        rgb_pixel[0][0] = red_mean
+        rgb_pixel[0][1] = green_mean
+        rgb_pixel[0][2] = blue_mean
   ```
